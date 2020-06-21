@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WaheGuru</string>
+    <string name="playbtn">Play</string>
+    <string name="anandSahib">Play Anand Sahib</string>
+    <string name="Stopbtn">Stop</string>
+    <string name="Chaupai_Sahib">PLay Chaupai Sahib</string>
+</resources>
