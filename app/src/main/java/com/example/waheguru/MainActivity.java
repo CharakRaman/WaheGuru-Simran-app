@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
       MediaPlayer player;
         MediaPlayer two;
         MediaPlayer three;
-
+        MediaPlayer Four;
 
 
 
@@ -36,7 +36,23 @@ public class MainActivity extends AppCompatActivity {
             }
             player.start();
             stopTwo();
+            StopFour();
             stop3();
+        }
+        public void Four(View v){
+        if(Four==null){
+            Four=MediaPlayer.create(this, R.raw.c);
+            Four.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    StopFour();
+                }
+            });
+        }
+        Four.start();
+        stop3();;
+        StopPlayer();
+        stopTwo();
         }
 
         public void Two (View v) {
@@ -51,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
             two.start();
             StopPlayer();
+            StopFour();
             stop3();
         }
 
@@ -66,19 +83,27 @@ public class MainActivity extends AppCompatActivity {
         }
         three.start();
         StopPlayer();
+        StopFour();
         stopTwo();
     }
 
 
     public void Stopone(View v){
         StopPlayer();
-    }
-    public void Stoptow(View v){
         stopTwo();
-    }
-    public void Stopthree(View v){
         stop3();
+        StopFour();
     }
+
+    public void StopFour(){
+        if(Four!=null){
+            Four.release();
+            Four=null;
+            Toast.makeText(this, "Player stopped", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
     public void stopTwo(){
         if(two!=null){
             two.release();
@@ -111,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
         stopTwo();
         StopPlayer();
         stop3();
+        StopFour();
 
     }
 }
