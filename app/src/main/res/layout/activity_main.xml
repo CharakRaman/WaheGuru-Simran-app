@@ -77,6 +77,21 @@
             android:textSize="30sp" />
 
         <Button
+            android:id="@+id/five"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_btn"
+
+            android:gravity="center_horizontal"
+            android:onClick="Five"
+            android:padding="0dp"
+            android:text="@string/PlayDhanGuruNanak"
+            android:textAlignment="center"
+            android:textSize="25sp" />
+
+        <Button
             android:id="@+id/Stop1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

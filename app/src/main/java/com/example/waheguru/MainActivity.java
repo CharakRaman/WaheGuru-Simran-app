@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         MediaPlayer two;
         MediaPlayer three;
         MediaPlayer Four;
+        MediaPlayer Five;
 
 
 
@@ -37,7 +38,24 @@ public class MainActivity extends AppCompatActivity {
             player.start();
             stopTwo();
             StopFour();
+            StopFive();
             stop3();
+        }
+        public void Five(View v){
+        if(Five==null){
+            Five=MediaPlayer.create(this,R.raw.d);
+            Five.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    StopFive();
+                }
+            });
+        }
+        Five.start();
+            stopTwo();
+            StopFour();
+            stop3();
+            StopPlayer();
         }
         public void Four(View v){
         if(Four==null){
@@ -52,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
         Four.start();
         stop3();;
         StopPlayer();
+        StopFive();
         stopTwo();
         }
 
@@ -67,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
             }
             two.start();
             StopPlayer();
+            StopFive();
             StopFour();
             stop3();
         }
@@ -83,6 +103,7 @@ public class MainActivity extends AppCompatActivity {
         }
         three.start();
         StopPlayer();
+        StopFive();
         StopFour();
         stopTwo();
     }
@@ -93,8 +114,17 @@ public class MainActivity extends AppCompatActivity {
         stopTwo();
         stop3();
         StopFour();
+        StopFive();
     }
 
+    public void StopFive(){
+        if(Five!=null){
+            Five.release();
+            Five=null;
+            Toast.makeText(this, "Player stopped", Toast.LENGTH_SHORT).show();
+
+        }
+    }
     public void StopFour(){
         if(Four!=null){
             Four.release();
@@ -136,6 +166,7 @@ public class MainActivity extends AppCompatActivity {
         stopTwo();
         StopPlayer();
         stop3();
+        StopFive();
         StopFour();
 
     }
