@@ -11,13 +11,15 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-      MediaPlayer player;
+        MediaPlayer player;
         MediaPlayer two;
         MediaPlayer three;
         MediaPlayer Four;
         MediaPlayer Five;
+        MediaPlayer Six;
+        MediaPlayer Seven;
 
-
+        //no problem here
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
             player.start();
             stopTwo();
             StopFour();
+            StopSeven();
+            StopSix();
             StopFive();
             stop3();
         }
@@ -55,9 +59,61 @@ public class MainActivity extends AppCompatActivity {
             stopTwo();
             StopFour();
             stop3();
+            StopSeven();
+            StopSix();
             StopPlayer();
         }
-        public void Four(View v){
+
+        //----------------------------------------
+        public void SIX(View v){
+        if(Six==null){
+            Six=MediaPlayer.create(this,R.raw.f);
+            Six.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    StopSix();
+                }
+            });
+        }
+        Six.start();
+      StopSeven();
+      StopFive();
+      StopFour();
+      stop3();
+      stopTwo();
+      StopPlayer();
+
+    }
+    //-----------------------------------------------------
+    public void SEVEN(View v){
+        if(Seven==null){
+            Seven=MediaPlayer.create(this,R.raw.g);
+            Seven.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mp) {
+                    StopSeven();
+                }
+            });
+        }
+        Seven.start();
+
+
+
+        StopSix();
+        StopFive();
+        StopFour();
+        stop3();
+        stopTwo();
+        StopPlayer();
+
+
+
+    }
+
+//--------------------------------------------------------------------
+
+
+    public void Four(View v){
         if(Four==null){
             Four=MediaPlayer.create(this, R.raw.c);
             Four.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -69,6 +125,8 @@ public class MainActivity extends AppCompatActivity {
         }
         Four.start();
         stop3();;
+        StopSeven();
+        StopSix();
         StopPlayer();
         StopFive();
         stopTwo();
@@ -87,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
             two.start();
             StopPlayer();
             StopFive();
+            StopSeven();
+            StopSix();
             StopFour();
             stop3();
         }
@@ -105,8 +165,11 @@ public class MainActivity extends AppCompatActivity {
         StopPlayer();
         StopFive();
         StopFour();
+        StopSeven();
+        StopSix();
         stopTwo();
     }
+
 
 
     public void Stopone(View v){
@@ -115,6 +178,8 @@ public class MainActivity extends AppCompatActivity {
         stop3();
         StopFour();
         StopFive();
+        StopSeven();
+        StopSix();
     }
 
     public void StopFive(){
@@ -125,6 +190,26 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+    //---------------------------------------------------------------------------------------------
+    public void StopSix(){
+        if(Six!=null){
+            Six.release();
+            Six=null;
+            Toast.makeText(this, "Player stopped", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    public void StopSeven(){
+        if(Seven!=null){
+            Seven.release();
+            Seven=null;
+            Toast.makeText(this, "Player stopped", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    //--------------------------------------------------------------------------------------------
     public void StopFour(){
         if(Four!=null){
             Four.release();
@@ -166,6 +251,8 @@ public class MainActivity extends AppCompatActivity {
         stopTwo();
         StopPlayer();
         stop3();
+        StopSeven();
+        StopSix();
         StopFive();
         StopFour();
 

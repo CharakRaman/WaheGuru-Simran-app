@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -13,11 +13,13 @@
         android:layout_width="match_parent"
 
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="-56dp">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="383dp"
+            android:layout_width="match_parent"
             android:layout_height="258dp"
 
             app:srcCompat="@drawable/download" />
@@ -27,7 +29,7 @@
             android:layout_width="150dp"
             android:layout_height="50dp"
             android:layout_gravity="center_horizontal"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:background="@drawable/custom_btn"
             android:gravity="center"
             android:onClick="One"
@@ -37,11 +39,45 @@
             android:textStyle="bold|italic" />
 
         <Button
+            android:id="@+id/Seven"
+            android:layout_width="200dp"
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/custom_btn"
+
+            android:onClick="SEVEN"
+            android:text="@string/AngSang"
+            android:textSize="20sp"
+             />
+
+        <Button
+            android:id="@+id/Six"
+            android:layout_width="200dp"
+
+
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+
+            android:background="@drawable/custom_btn"
+            android:onClick="SIX"
+            android:text="@string/Simran59min"
+            android:textSize="20sp"
+             />
+
+        <Button
             android:id="@+id/two"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/custom_btn"
             android:gravity="center_horizontal"
             android:onClick="Two"
@@ -82,8 +118,9 @@
             android:layout_height="45dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:background="@drawable/custom_btn"
+            android:layout_marginBottom="10dp"
 
+            android:background="@drawable/custom_btn"
             android:gravity="center_horizontal"
             android:onClick="Five"
             android:padding="0dp"
@@ -94,12 +131,15 @@
         <Button
             android:id="@+id/Stop1"
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
             android:layout_gravity="center|center_horizontal"
             android:layout_marginTop="20dp"
-            android:onClick="Stopone"
             android:background="@drawable/redbtn"
-            android:text="@string/Stopbtn" />
+            android:onClick="Stopone"
+            android:text="@string/Stopbtn"
+            android:textSize="20sp" />
+
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
